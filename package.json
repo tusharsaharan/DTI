@@ -1,0 +1,5 @@
+{
+  "name": "attune",
+  "private": true,
+  "workspaces": ["apps/mobile", "packages/*"]
+}

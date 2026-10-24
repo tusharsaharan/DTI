@@ -1,0 +1,55 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+  <uses-permission android:name="android.permission.READ_CALENDAR" />
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <!-- Declared for honest permission coverage; activity transitions are not claimed until wired. -->
+  <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+  <!-- Wi-Fi SSID reads are best-effort and remain unavailable without runtime location state. -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+  <application>
+    <service
+      android:name="app.attune.attunenative.notification.AttuneNotificationListenerService"
+      android:exported="true"
+      android:label="@string/attune_service_name"
+      android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+      <intent-filter>
+        <action android:name="android.service.notification.NotificationListenerService" />
+      </intent-filter>
+    </service>
+
+    <service
+      android:name="app.attune.attunenative.attention.AttuneAttentionCameraService"
+      android:exported="false"
+      android:foregroundServiceType="camera" />
+
+    <service
+      android:name="app.attune.attunenative.ambient.AttuneAmbientAudioService"
+      android:exported="false"
+      android:foregroundServiceType="microphone" />
+
+    <service
+      android:name="app.attune.attunenative.keyboard.AttuneInputMethodService"
+      android:directBootAware="false"
+      android:exported="true"
+      android:label="@string/attune_keyboard_name"
+      android:permission="android.permission.BIND_INPUT_METHOD">
+      <intent-filter>
+        <action android:name="android.view.InputMethod" />
+      </intent-filter>
+      <meta-data
+        android:name="android.view.im"
+        android:resource="@xml/attune_input_method" />
+    </service>
+  </application>
+</manifest>

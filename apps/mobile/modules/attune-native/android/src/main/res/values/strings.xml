@@ -1,0 +1,5 @@
+<resources>
+  <string name="attune_service_name">Attune sensing</string>
+  <string name="attune_keyboard_name">Attune Keyboard</string>
+  <string name="attune_sensing_channel">Attune sensing</string>
+</resources>

@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "mobile": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@mobilenext/mobile-mcp@latest"
+      ],
+      "env": {}
+    },
+    "huggingface": {
+      "type": "http",
+      "url": "https://huggingface.co/mcp"
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  }
+}

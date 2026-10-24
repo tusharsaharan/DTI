@@ -1,0 +1,12 @@
+services:
+  fl:
+    build: .
+    environment:
+      FL_API_KEY: ${FL_API_KEY:?Set FL_API_KEY to a long random value before starting}
+      FL_MIN_CLIENTS: ${FL_MIN_CLIENTS:-2}
+      FL_CLIP_NORM: ${FL_CLIP_NORM:-1.0}
+      FL_PRIVACY_EPSILON: ${FL_PRIVACY_EPSILON:-1.0}
+      FL_PRIVACY_DELTA: ${FL_PRIVACY_DELTA:-0.00001}
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

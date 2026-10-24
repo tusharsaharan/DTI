@@ -1,0 +1,35 @@
+node_modules/
+.expo/
+dist/
+web-build/
+android/
+# The local Expo module contains source Android code and tests; it must ship with the repo.
+!apps/mobile/modules/attune-native/android/
+!apps/mobile/modules/attune-native/android/**
+apps/mobile/modules/attune-native/android/build/
+.gradle/
+**/build/
+*.class
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.venv/
+env/
+venv/
+ios/
+*.apk
+*.aab
+.env
+.env*.local
+vendor/
+.playwright-mcp/
+.DS_Store
+*.tsbuildinfo
+legacy/web/node_modules/
+legacy/web/.next/
+legacy/web/public/mediapipe/wasm/
+
